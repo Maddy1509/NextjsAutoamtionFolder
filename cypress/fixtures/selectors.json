@@ -1,0 +1,64 @@
+
+{
+    "login": {
+
+        "url": "https://nextjs14-simpleapp.vercel.app/",
+        "login": "a[class='flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base'] span",
+        "loginurl" : "https://nextjs14-simpleapp.vercel.app/login?callbackUrl=https%3A%2F%2Fnextjs14-simpleapp.vercel.app%2Flogin",
+        "continueLogin" : ".__className_712214.mb-3.text-2xl",
+        "labelEmail": "label[for='email']",
+        "email": "#email",
+        "password" : "#password",
+        "loginButton" : "button[class='flex h-10 items-center rounded-lg bg-blue-500 px-4 text-sm font-medium text-white transition-colors hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:bg-blue-600 aria-disabled:cursor-not-allowed aria-disabled:opacity-50 mt-4 w-full']",
+        "invalid" : ".text-sm.text-red-500",
+        "dashboard" : "h1[class='__className_712214 mb-4 text-xl md:text-2xl']"
+    },
+
+    "Invoice" : {
+
+        "invoice" : "a[href='/dashboard/invoices']>.w-6>path",
+        "invoiceurl" : "https://nextjs14-simpleapp.vercel.app/dashboard/invoices",
+        "search" : "input[placeholder='Search invoices...']",
+        "edit": "svg",
+        "customer" : "label[for='customer']",
+        "ChooseCustomer" : "#customer",
+        "Amount" : "#amount",
+        "Pending" : "#pending",
+        "Paid" : "#paid",
+        "EditInvoice" : ".bg-blue-500",
+        "AmyMail" : "tbody tr:nth-child(1) td:nth-child(2)",
+        "DeleteBtn" : "cy.get(':nth-child(1) > :nth-child(6) > .flex > form > .rounded-md > .w-5')"    
+    },
+
+    "CreateInvoice" : {
+
+        "createInvoice" : "span[class='hidden md:block']",
+        "Customer" : "label[for='customer']",
+        "ChooseCustomer" : "#customer",
+        "Amount" : "#amount",
+        "Pending" : "#pending",
+        "Paid" : "#paid",
+        "CreateInvoiceButton" : "button[type='submit']"
+    },
+
+    "InvoiceCalac" : {
+        "invoiceurl" : "https://nextjs14-simpleapp.vercel.app/dashboard/invoices",
+        "Home" : "a[class='flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3 bg-sky-100 text-blue-600']",
+        
+        "createInvoice" : "span[class='hidden md:block']",
+        "CertChooseCustomer" : "#customer",
+        "CertAmount" : "#amount",
+        "Paid" : "#paid",
+        "CreateInvoiceButton" : "button[type='submit']",
+
+        "ChooseCustomer" : "#customer",
+        "Amount" : "#amount",
+        "Pending" : "#pending",
+        "EditInvoice" : ".bg-blue-500",
+        
+        "Collected" : "body > div:nth-child(1) > div:nth-child(2) > main:nth-child(1) > div:nth-child(2) > div:nth-child(1) > p:nth-child(2)",
+        "Pendingdashboard" : "body > div:nth-child(1) > div:nth-child(2) > main:nth-child(1) > div:nth-child(2) > div:nth-child(2) > p:nth-child(2)",
+        "TotalInvoice" : "body > div:nth-child(1) > div:nth-child(2) > main:nth-child(1) > div:nth-child(2) > div:nth-child(3) > p:nth-child(2)"
+
+    }
+}
