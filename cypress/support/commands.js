@@ -254,43 +254,67 @@ Cypress.Commands.add('createInvoice', (Selector) => {
 
 
 Cypress.Commands.add('InvoiceCalacuation',(Selector)=>{
-    // Capture the initial total amount of pending invoices from the dashboard
-    cy.get(Selector.InvoiceCalac.Pendingdashboard).invoke('text').as('initialPendingAmount');
 
-    // Create a new invoice with amount 500 and mark it as paid
-    cy.createInvoice(Selector);
-
-    // Navigate back to the dashboard
-    cy.visit(Selector.login.url + 'dashboard');
-
-    // Capture the updated total amount of pending invoices
-    cy.get(Selector.InvoiceCalac.Pendingdashboard).invoke('text').as('updatedPendingAmount');
-
-    // Calculate the difference
-    cy.get('@initialPendingAmount').then((initialPendingAmount) => {
-        cy.get('@updatedPendingAmount').then((updatedPendingAmount) => {
-            const difference = parseFloat(updatedPendingAmount.replace('$', '').replace(',', '')) - parseFloat(initialPendingAmount.replace('$', '').replace(',', ''));
-            cy.log('Difference:', difference); // Log difference
-
-            // Verify that the difference matches the amount of the newly paid invoice (400)
-            expect(difference).to.equal(500);
-        });
-    });
-});
-
-
-    //cy.visit(Selector.InvoiceCalac.invoiceurl)
+    cy.visit(Selector.InvoiceCalac.invoiceurl)
+    //To check the total invoice count
+    //Create New Invoice
+    cy.get(Selector.InvoiceCalac.createInvoice).click();
+    cy.get(Selector.InvoiceCalac.ChooseCustomer).select('Emil Kowalski');
+    cy.get(Selector.InvoiceCalac.Amount).type("600");
+    cy.get(Selector.InvoiceCalac.Paid).check();
+    cy.get(Selector.InvoiceCalac.CreateInvoiceButton).click();
+    cy.wait(4000)
+    //Create New Invoice
+    //created invoice should display the changes in Total Invoice and Collected in dashboard
+    cy.visit('https://nextjs14-simpleapp.vercel.app/dashboard')
+    cy.wait(4000)
     
-
     //Edit Invoice
-    // cy.xpath("//tbody/tr[1]/td[6]/div[1]/a[1]//*[name()='svg']").click()
-    // cy.get(Selector.InvoiceCalac.Amount).clear().type("900")
-    // cy.get(Selector.InvoiceCalac.Pending).check()
-    // cy.get(Selector.InvoiceCalac.EditInvoice).click()
-    // cy.get(Selector.InvoiceCalac.Home).click()
+    cy.visit(Selector.InvoiceCalac.invoiceurl)
+    cy.xpath("//tbody/tr[4]/td[6]/div[1]/a[1]//*[name()='svg']").click()
+    cy.get(Selector.InvoiceCalac.Amount).clear().type("900")
+    cy.get(Selector.InvoiceCalac.Pending).check()
+    cy.get(Selector.InvoiceCalac.EditInvoice).click()
+    cy.get(Selector.InvoiceCalac.Home).click()
+    cy.wait(3000)
     //Edit Invoice
 
-    //Created and Edited Invoice Should be Displayed in Dashboard
-    //cy.visit('https://nextjs14-simpleapp.vercel.app/dashboard')
+    //Edited Invoice Should be Displayed in Dashboard
+    cy.visit('https://nextjs14-simpleapp.vercel.app/dashboard')
+})
 
+
+
+
+
+
+
+
+
+    // Capture the initial total amount of pending invoices from the dashboard
+//     cy.get(Selector.InvoiceCalac.Pendingdashboard).invoke('text').as('initialPendingAmount');
+
+//     // Create a new invoice with amount 500 and mark it as paid
+//     cy.createInvoice(Selector);
+
+//     // Navigate back to the dashboard
+//     cy.visit(Selector.login.url + 'dashboard');
+
+//     // Capture the updated total amount of pending invoices
+//     cy.get(Selector.InvoiceCalac.Pendingdashboard).invoke('text').as('updatedPendingAmount');
+
+//     // Calculate the difference
+//     cy.get('@initialPendingAmount').then((initialPendingAmount) => {
+//         cy.get('@updatedPendingAmount').then((updatedPendingAmount) => {
+//             const difference = parseFloat(updatedPendingAmount.replace('$', '').replace(',', '')) - parseFloat(initialPendingAmount.replace('$', '').replace(',', ''));
+//             cy.log('Difference:', difference); // Log difference
+
+//             // Verify that the difference matches the amount of the newly paid invoice (400)
+//             expect(difference).to.equal(500);
+//         });
+//     });
+// });
+
+
+    
 

@@ -27,6 +27,16 @@ describe('Automation Excercise Testing' , function() {
         cy.get("h1[class='__className_712214 mb-4 text-xl md:text-2xl']").contains('Dashboard')
         cy.wait(5000)
         cy.InvoiceCalacuation(Selector)
+    
+    
+    })
+})
+
+
+
+
+
+
 
     //     let initialPendingAmount;
     //     cy.get("body > div:nth-child(1) > div:nth-child(2) > main:nth-child(1) > div:nth-child(2) > div:nth-child(2) > p:nth-child(2)").invoke('text').then((text) => {
@@ -64,5 +74,3 @@ describe('Automation Excercise Testing' , function() {
     // expect(difference).to.equal(500);
 
    
-    })
-})
