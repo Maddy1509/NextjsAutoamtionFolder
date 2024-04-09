@@ -1,0 +1,17 @@
+{
+  "name": "nextjsautomation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Madhavan",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.7.0"
+  },
+  "devDependencies": {
+    "@cypress/xpath": "^2.0.3"
+  }
+}
