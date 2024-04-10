@@ -7,7 +7,7 @@ describe('Automation Excercise Testing' , function() {
     })
     });
 
-     it('Test case 1 : verifying with incorrect Email', function(){
+    it('Test case 1 : verifying with incorrect Email', function(){
         cy.incorrectEmail(Selector)
     })
 
@@ -19,7 +19,7 @@ describe('Automation Excercise Testing' , function() {
         cy.invoicePage(Selector)
     })
 
-    it.only('Test case 4 : should correctly calculate invoice amounts', () => {
+    it('Test case 4 : should correctly calculate invoice amounts', () => {
         cy.visit('https://nextjs14-simpleapp.vercel.app/login?callbackUrl=https%3A%2F%2Fnextjs14-simpleapp.vercel.app%2Flogin')
         cy.get("#email").type("user@nextmail.com")
         cy.get("#password").type("123456")
@@ -28,9 +28,17 @@ describe('Automation Excercise Testing' , function() {
         cy.wait(5000)
         cy.InvoiceCalacuation(Selector)
     
-    
     })
-})
+    
+    it.only('Test case 5 : should correctly calculate invoice amounts', () => {
+        cy.Login(Selector)
+        cy.get("div[class='flex flex-row items-center justify-between py-4'] p[class='truncate text-sm font-semibold md:text-base']")
+        .invoke('text').then((text) => {
+            const invoiceName = text.trim();
+            // Assert that the invoice name matches the expected value
+            expect(invoiceName).to.equal('Amy Burns');
+        })
+    })
 
 
 
@@ -73,4 +81,4 @@ describe('Automation Excercise Testing' , function() {
     // cy.log('Difference:', difference);
     // expect(difference).to.equal(500);
 
-   
+})

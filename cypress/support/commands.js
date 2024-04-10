@@ -243,6 +243,14 @@ Cypress.Commands.add('invoicePage',(Selector)=>{
     
 })
 
+Cypress.Commands.add('Login', (Selector) => {
+    cy.visit(Selector.login.loginurl)
+    cy.get(Selector.login.email).type("user@nextmail.com")
+    cy.get(Selector.login.password).type("123456")
+    cy.get(Selector.login.loginButton).click()
+    cy.get(Selector.login.dashboard).contains('Dashboard')
+})
+
 Cypress.Commands.add('createInvoice', (Selector) => {
     cy.visit(Selector.Invoice.invoiceurl);
     cy.get(Selector.CreateInvoice.createInvoice).click();
@@ -256,6 +264,7 @@ Cypress.Commands.add('createInvoice', (Selector) => {
 Cypress.Commands.add('InvoiceCalacuation',(Selector)=>{
 
     cy.visit(Selector.InvoiceCalac.invoiceurl)
+
     //To check the total invoice count
     //Create New Invoice
     cy.get(Selector.InvoiceCalac.createInvoice).click();
@@ -265,6 +274,7 @@ Cypress.Commands.add('InvoiceCalacuation',(Selector)=>{
     cy.get(Selector.InvoiceCalac.CreateInvoiceButton).click();
     cy.wait(4000)
     //Create New Invoice
+
     //created invoice should display the changes in Total Invoice and Collected in dashboard
     cy.visit('https://nextjs14-simpleapp.vercel.app/dashboard')
     cy.wait(4000)
@@ -282,6 +292,8 @@ Cypress.Commands.add('InvoiceCalacuation',(Selector)=>{
     //Edited Invoice Should be Displayed in Dashboard
     cy.visit('https://nextjs14-simpleapp.vercel.app/dashboard')
 })
+
+ 
 
 
 

@@ -60,5 +60,11 @@
         "Pendingdashboard" : "body > div:nth-child(1) > div:nth-child(2) > main:nth-child(1) > div:nth-child(2) > div:nth-child(2) > p:nth-child(2)",
         "TotalInvoice" : "body > div:nth-child(1) > div:nth-child(2) > main:nth-child(1) > div:nth-child(2) > div:nth-child(3) > p:nth-child(2)"
 
+    },
+
+    "LatestInvoices" : {
+        "FirstRow" : "div[class='flex flex-row items-center justify-between py-4']",
+        "Name" : "div[class='flex flex-row items-center justify-between py-4'] p[class='truncate text-sm font-semibold md:text-base']"
+
     }
 }
