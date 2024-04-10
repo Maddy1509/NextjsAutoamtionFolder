@@ -37,6 +37,7 @@ describe('Automation Excercise Testing' , function() {
             const invoiceName = text.trim();
             // Assert that the invoice name matches the expected value
             expect(invoiceName).to.equal('Amy Burns');
+            // Assert that the invoice name matches the expected value
         })
     })
 
